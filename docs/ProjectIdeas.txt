@@ -1,0 +1,20 @@
+Idea #1: What's the quickest way to get home?
+
+A simple, but useful app that combines data from various transportation services to determine what the quickest route home is for the user.
+
+Third-party authentication:
+Login with Facebook or Twitter so that the app can store your favorite places (such as home, work, class, etc.) and notify you when you need to leave!
+
+Database:
+Stores favorite locations and user preferences in a database.
+
+Two publicly available APIs:
+1. Boston University Shuttle location API
+2. MBTA location API for trains and buses
+
+
+
+
+Idea #2: Bitcoin Wallet
+
+??
