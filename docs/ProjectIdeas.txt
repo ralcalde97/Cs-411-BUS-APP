@@ -15,6 +15,13 @@ Two publicly available APIs:
 
 
 
-Idea #2: Bitcoin Wallet
+Idea #2: Investments Notifier
 
-??
+This app will notify you of changes in your investments, i.e. it will follow the prices of those stocks and coins that you did not include some sort of stop loss mechanism on and will notify you if the prices are falling quickly, it will also allow you to sell quickly. 
+
+Database:
+It will store the consumers investment portfolios and wallets
+
+APIS:
+1. Bittrex API
+2. Some roboadvising platform's API such as Tasty Works
