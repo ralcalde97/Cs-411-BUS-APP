@@ -1,0 +1,12 @@
+User Story 4
+
+As a phone user, I would like the webapp to be mobile-friendly
+so that I can use it on the go.
+
+This app is meant to be used to get from here to there, so the most 
+common use will most likely be on a mobile device (especially if uber 
+is being implemented). Therefore, the webapp needs to load and run 
+well on a mobile device as well as on a regular computer. Certain 
+functionalities like sign-in, switching views, and updating forms need 
+to be well managed on a differently sized screen. This should also work 
+no matter the device (iPhone or Android etc).

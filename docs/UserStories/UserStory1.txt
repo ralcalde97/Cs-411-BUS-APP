@@ -1,0 +1,12 @@
+User Story 1
+
+As a new user, I want to be able to login with Facebook/Google and save my usual locations,
+so that I can have this data saved whenever I need to use the app.
+
+The new user must have a social media account in order to login to the application. Once 
+the account is verified by the application, the user is then given the option to save 
+locations such as home, school, work, etc. and sync their Google calendar (see user story 3)
+so that they can be notified of when is the best time to leave in order to get where they
+are going on time. The user can also choose whether or not to receive notifications. If the
+user does not complete all the steps of creating a new account before exiting the application,
+the data will be lost and they will have to start over.

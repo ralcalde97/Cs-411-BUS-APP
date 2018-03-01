@@ -1,0 +1,10 @@
+User Story 3
+
+As a BU student, I want to sync my Google calendar into 
+the app so that I can find routes to my meetings and classes.
+
+This data should be saved in a database, but if location is not 
+added to each event, the app must request this information from 
+the user. The user should be able to disable notifications and 
+also specify how far in advance they desire to be notified of the 
+shortest route, and which means of transportation to use.
