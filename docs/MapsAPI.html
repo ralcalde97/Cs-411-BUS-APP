@@ -221,9 +221,9 @@
     </script>
     <script async defer id="API_with_key"></script>
     <script>
-    	var txtFile = "file:///C:/Users/abbot/Desktop/Everything/College/Software_Engineering/gMapsKey.txt"
+    	var txtFile = "file:///C:local/directory/with/key.txt"
     	var safeURL = 'https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initMap'
-		
+		  // Ideally you read the text file and set safeURL to the URL with the actual key, but for now it must be hardcoded
   		document.getElementById('API_with_key').src = safeURL;
 	</script>
   </body>
