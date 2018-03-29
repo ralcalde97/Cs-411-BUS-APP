@@ -3,8 +3,7 @@ const bodyParser = require('body-parser');
 const request = require('request');
 const app = express()
 
-const apiKey = 'b97fb362737d7b89cb9f83f3e0753b51';
-
+const apiKey = 'INSERT MBTA ABI KEY BEFORE RUNNING' 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs')
