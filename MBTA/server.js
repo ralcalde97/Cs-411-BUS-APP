@@ -3,28 +3,31 @@ const bodyParser = require('body-parser');
 const request = require('request');
 const app = express()
 
-const apiKey = 'INSERT MBTA ABI KEY BEFORE RUNNING' 
+const apiKey = 'placeKey' 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs')
 
 app.get('/', function (req, res) {
   res.render('index', {weather: null, error: null});
+
 })
 
 app.post('/', function (req, res) {
-  //let city = req.body.city;
-  let url = 'https://api-v3.mbta.com/predictions?sort=arrival_time&filter%5Bstop%5D=70145&filter%5Broute%5D=Green-B'
 
-  request(url, function (err, response, body) {
+  let StopCode = '70145'
+  let url = `https://api-v3.mbta.com/predictions?sort=arrival_time&filter%5Bstop%5D=${StopCode}&filter%5Broute%5D=Green-B`
+
+  request(url, function (err, response, body){
     if(err){
       res.render('index', {weather: null, error: 'Error, please try again'});
     } else {      
       
       let mbta = JSON.parse(body)
-  	  console.log(mbta.data[0].attributes.arrival_time);
+      console.log(mbta.data[0].attributes.arrival_time);
       let arrival_BU_Central = mbta.data[0].attributes.arrival_time; 
       var sub = arrival_BU_Central.substring(11,16);
+      
       
       if(mbta.data == undefined){
         res.render('index', {weather: null, error: 'Error, MBTA servers are down'});
@@ -55,6 +58,16 @@ var options = { method: 'GET',
 request(options, function (error, response, body) {
   if (error) throw new Error(error);
   
+  let mbta = JSON.parse(body)
+  console.log(mbta.data[0].attributes.arrival_time);
+  let arrival_BU_Central = mbta.data[0].attributes.arrival_time; 
+
+  console.log(body);
+});
+
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!')
+})  
   let mbta = JSON.parse(body)
   console.log(mbta.data[0].attributes.arrival_time);
   let arrival_BU_Central = mbta.data[0].attributes.arrival_time; 
