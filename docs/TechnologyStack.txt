@@ -1,0 +1,1 @@
+For our technology stack, we decided to use node.js for our back-end framework, written in javascript. We are currently planning on using html and ejs for the front-end.
