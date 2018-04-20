@@ -1,9 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const request = require('request');
-const app = express()
+const app = express();
+var mongojs = require('mongojs');
+const db = mongojs('mongodb://jack:jack@ds151809.mlab.com:51809/mytasklist_jack', ['tasks']);
 
-const apiKey = 'INSERT MBTA ABI KEY BEFORE RUNNING' 
+
+const apiKey = 'b97fb362737d7b89cb9f83f3e0753b51';
+
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs')
@@ -15,14 +19,13 @@ app.get('/', function (req, res) {
 app.post('/', function (req, res) {
   //let city = req.body.city;
   let url = 'https://api-v3.mbta.com/predictions?sort=arrival_time&filter%5Bstop%5D=70145&filter%5Broute%5D=Green-B'
-
   request(url, function (err, response, body) {
     if(err){
       res.render('index', {weather: null, error: 'Error, please try again'});
     } else {      
       
       let mbta = JSON.parse(body)
-  	  console.log(mbta.data[0].attributes.arrival_time);
+      console.log(mbta.data[0].attributes.arrival_time);
       let arrival_BU_Central = mbta.data[0].attributes.arrival_time; 
       var sub = arrival_BU_Central.substring(11,16);
       
@@ -31,9 +34,21 @@ app.post('/', function (req, res) {
       } else {
         let weatherText = `The next train to BU Central (Outbound) will arrive at: ${sub}!`;
         res.render('index', {weather: weatherText, error: null});
+
+        // We are still figuring out how to check to see if the value is already in the database. Also, we are unsure
+        // if the way we are accessing the database is correct. We get an error after storing one entry.
+
+        db.tasks.save(mbta, function(err, task){
+          if(err){
+              res.send(err);
+          }
+          res.json(mbta);
+        });
       }
     }
   });
+
+  
   
   
   
