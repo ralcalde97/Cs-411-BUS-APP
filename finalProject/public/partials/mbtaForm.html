@@ -1,0 +1,36 @@
+<!-- "Join Team" (Post) Form -->
+<div class="col-md-5">
+
+    <!-- Creates Main Panel -->
+    <div class="panel panel-default">
+
+        <!-- Panel Title -->
+        <div class="panel-heading">
+            <h2 class="panel-title text-center">MBTA Times Near You <span class="glyphicon glyphicon-map-marker"></span></h2>
+        </div>
+
+        <!-- Panel Body -->
+        <div class="panel-body">
+
+            <!-- Creates Form (novalidate disables HTML validation, Angular will control) -->
+            <form name ="mbtaForm" novalidate>
+
+                <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
+
+                <!-- Submit button. Note that its tied to createUser() function from addCtrl. Also note ng-disabled logic which prevents early submits.  -->
+                <button type="submit" class="btn btn-danger btn-block" ng-click="blandfordOutbound()">Blandford St. (Outbound)</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="bueastOutbound()">BU East (Outbound)</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="bucentralOutbound()">BU Central (Outbound)</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="buwestOutbound()">BU West (Outbound)</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="stpaulstreetOutbound()">St. Paul Street (Outbound)</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="pleasantstreetOutbound()">Pleasant St. (Outbound)</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="babcockstreetOutbound()">Babcock Street (Outbound)</button>
+            </form>
+            
+            <div ng-show="testVariable>0" class="panel-footer">
+                <h3 class="text-center">The next arrival time for {{newVariable}} is {{arrivalTime}}.</h3>
+        </div>
+
+        </div>
+    </div>
+</div>

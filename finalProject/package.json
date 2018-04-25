@@ -1,0 +1,16 @@
+{
+    "name": "MeanMapsApp",
+    "version": "1.0.0",
+    "description": "Application that allows BU students to get home quickly.",
+    "main": "server.js",
+    "author": "CS411",
+    "dependencies": {
+        "body-parser": "~1.5.2",
+        "express": "~4.7.2",
+        "jsonwebtoken": "^5.0.2",
+        "method-override": "~2.1.2",
+        "mongoose": "~4.1.0",
+        "morgan": "~1.2.2",
+        "request": "^2.85.0"
+    }
+}
