@@ -54,7 +54,7 @@ module.exports = function(app) {
 
                 let mbta = JSON.parse(body)
               
-              if(mbta.data == undefined || mbta.data.attributes == undefined){
+              if(mbta.data == undefined){
                 res.send("MBTA predictions are unavailable at this time");
               } else {
 

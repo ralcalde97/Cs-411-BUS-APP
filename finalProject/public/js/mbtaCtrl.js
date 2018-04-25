@@ -19,6 +19,7 @@ mbtaCtrl.controller('mbtaCtrl', function($scope, $log, $http) {
 
             // Store the filtered results in queryResults
             .success(function(queryResults){
+                console.log(queryResults);
                 $scope.arrivalTime = queryResults;
             })
 
