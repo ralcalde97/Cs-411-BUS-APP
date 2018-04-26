@@ -42,6 +42,7 @@ module.exports = function(app) {
         });
     });
 
+    // Communicates with the MBTA API by sending them the requested stop and then receives arrival times
     app.post('/mbtaAPI', function(req, res){
 
         var stopID = req.body.stopID;

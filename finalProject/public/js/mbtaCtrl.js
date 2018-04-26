@@ -9,6 +9,8 @@ mbtaCtrl.controller('mbtaCtrl', function($scope, $log, $http) {
     $scope.newVariable = "Please click on a stop"
     $scope.arrivalTime = ""
 
+    // Blandford Street API calls
+
     $scope.blandfordOutbound = function(testVariable){
 
         queryBody = {
@@ -48,6 +50,8 @@ mbtaCtrl.controller('mbtaCtrl', function($scope, $log, $http) {
     
     };
 
+    // BU East API calls
+
     $scope.bueastOutbound = function(testVariable){
 
         queryBody = {
@@ -84,6 +88,8 @@ mbtaCtrl.controller('mbtaCtrl', function($scope, $log, $http) {
         
     
     };
+
+    // BU Central API calls
 
     $scope.bucentralOutbound = function(testVariable){
 
@@ -124,6 +130,8 @@ mbtaCtrl.controller('mbtaCtrl', function($scope, $log, $http) {
     
     };
 
+    // BU West API calls
+
     $scope.buwestOutbound = function(testVariable){
 
         queryBody = {
@@ -160,6 +168,8 @@ mbtaCtrl.controller('mbtaCtrl', function($scope, $log, $http) {
         
     
     };
+
+    // St. Pual Street API calls
 
     $scope.stpaulstreetOutbound = function(testVariable){
 
@@ -198,6 +208,8 @@ mbtaCtrl.controller('mbtaCtrl', function($scope, $log, $http) {
     
     };
 
+    // Pleasant Street API calls
+
     $scope.pleasantstreetOutbound = function(testVariable){
 
         queryBody = {
@@ -234,6 +246,8 @@ mbtaCtrl.controller('mbtaCtrl', function($scope, $log, $http) {
         
     
     };
+
+    // Babcock Street API calls
 
     $scope.babcockstreetOutbound = function(testVariable){
 
