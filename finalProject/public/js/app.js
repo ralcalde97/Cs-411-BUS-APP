@@ -15,6 +15,11 @@ var app = angular.module('meanMapApp', ['addCtrl', 'mbtaCtrl', 'busCtrl', 'heade
             templateUrl: 'partials/mbtaForm.html',
 
         // All else forward to the Sign-Up Control Panel
+        }).when('/mbtaI', {
+            controller: 'mbtaCtrl',
+            templateUrl: 'partials/mbtaFormI.html',
+
+        // All else forward to the Sign-Up Control Panel
         }).when('/bus', {
             controller: 'busCtrl',
             templateUrl: 'partials/busForm.html',

@@ -12,6 +12,17 @@
         <!-- Panel Body -->
         <div class="panel-body">
 
+           
+                <div class="header">
+                        <!-- Header items are made active upon selection -->
+                        <ul class="nav nav-pills nav-justified">
+                            <li ng-class="{ active: isActive('/mbta')}"><a href="/#/mbta">Outbound</a></li>
+                            <li ng-class="{ active: isActive('/mbtaI')}"><a href="/#/mbtaI">Inbound</a></li>
+                        </ul>
+                        <br>
+                </div>   
+                      
+
             <!-- Creates Form (novalidate disables HTML validation, Angular will control) -->
             <form name ="mbtaForm" novalidate>
 
@@ -25,6 +36,7 @@
                 <button type="submit" class="btn btn-danger btn-block" ng-click="stpaulstreetOutbound()">St. Paul Street (Outbound)</button>
                 <button type="submit" class="btn btn-danger btn-block" ng-click="pleasantstreetOutbound()">Pleasant St. (Outbound)</button>
                 <button type="submit" class="btn btn-danger btn-block" ng-click="babcockstreetOutbound()">Babcock Street (Outbound)</button>
+
             </form>
             
             <div ng-show="testVariable>0" class="panel-footer">
