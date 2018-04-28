@@ -1,7 +1,10 @@
 // Dependencies
 var mongoose        = require('mongoose');
 var User            = require('./model.js');
-var request = require('request');
+var request         = require('request');
+var jsconfig        = require('./jsonConfig.json');
+var MBTAkey         = jsconfig.MBTAkey;
+
 
 
 // Opens App Routes
@@ -46,7 +49,7 @@ module.exports = function(app) {
     app.post('/mbtaAPI', function(req, res){
 
         var stopID = req.body.stopID;
-        var APIUrl = "https://api-v3.mbta.com/predictions?sort=arrival_time&filter%5Bstop%5D="+stopID+"&filter%5Broute%5D=Green-B&api_key=935579a3be304755b8dc9edce1db2887";
+        var APIUrl = "https://api-v3.mbta.com/predictions?sort=arrival_time&filter%5Bstop%5D="+stopID+"&filter%5Broute%5D=Green-B&api_key="+MBTAkey;
 
         request(APIUrl, function (err, response, body) {
             if(err){
