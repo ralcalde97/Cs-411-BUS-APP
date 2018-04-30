@@ -11,6 +11,7 @@
         "method-override": "~2.1.2",
         "mongoose": "~4.1.0",
         "morgan": "~1.2.2",
+        "ngx-bootstrap": "^2.0.4",
         "request": "^2.85.0"
     }
 }
