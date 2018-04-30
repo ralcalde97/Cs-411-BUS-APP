@@ -76,40 +76,6 @@ module.exports = function(app) {
         
     });
 
-    // Communicates with the BU bus API
-    app.post('/BusAPI', function(req, res){
-
-        var stopID = req.body.stopID;
-        var APIUrl = "https://www.bu.edu/bumobile/rpc/bus/livebus.json.php"
-        let stoptimes = new Set()
-
-        request(APIUrl, function (err, response, body) {
-            if(err){
-              res.send(err);
-            } else { 
-
-                let busInfo = JSON.parse(body)
-              
-              if(busInfo.data == undefined){
-                res.send("Something Errored");
-              } else {
-                for (result in (busInfo.ResultSet.Result)){
-                    for (arrivals in result.arrival_estimates){
-                        if (arrivals.stop_id == stopID){
-                            stoptimes.add(arrivals.arrival_at)
-                        }
-                    }
-                }
-
-                res.send(stoptimes);
-        
-              }
-            }
-          });
-
-        
-    });
-
 
 
     // DELETE Routes (Dev Only)
