@@ -9,41 +9,21 @@
             <h2 class="panel-title text-center">MBTA Times Near You <span class="glyphicon glyphicon-map-marker"></span></h2>
         </div>
 
-        <!-- Panel Body -->
-        <div class="panel-body">
+        <!-- drop down menu -->
+        <div class= "panel-body">
+            <input list="testList" id=stops type="text" ng-model="SelectedStop" ng-change="stopData(SelectedStop)"/>
+            <datalist id="testList">
+                <option ng-repeat="x1 in stops" value="{{x1.stopname}}"></option>
+            </datalist>
 
-           
-                <div class="header">
-                        <!-- Header items are made active upon selection -->
-                        <ul class="nav nav-pills nav-justified">
-                            <li ng-class="{ active: isActive('/mbta')}"><a href="/#/mbta">Outbound</a></li>
-                            <li ng-class="{ active: isActive('/mbtaI')}"><a href="/#/mbtaI">Inbound</a></li>
-                        </ul>
-                        <br>
-                </div>   
-                      
-
-            <!-- Creates Form (novalidate disables HTML validation, Angular will control) -->
-            <form name ="mbtaForm" novalidate>
-
-                <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
-
-                <!-- Submit button. Note that its tied to createUser() function from addCtrl. Also note ng-disabled logic which prevents early submits.  -->
-                <button type="submit" class="btn btn-danger btn-block" ng-click="blandfordOutbound()">Blandford St. (Outbound)</button>
-                <button type="submit" class="btn btn-danger btn-block" ng-click="bueastOutbound()">BU East (Outbound)</button>
-                <button type="submit" class="btn btn-danger btn-block" ng-click="bucentralOutbound()">BU Central (Outbound)</button>
-                <button type="submit" class="btn btn-danger btn-block" ng-click="buwestOutbound()">BU West (Outbound)</button>
-                <button type="submit" class="btn btn-danger btn-block" ng-click="stpaulstreetOutbound()">St. Paul Street (Outbound)</button>
-                <button type="submit" class="btn btn-danger btn-block" ng-click="pleasantstreetOutbound()">Pleasant St. (Outbound)</button>
-                <button type="submit" class="btn btn-danger btn-block" ng-click="babcockstreetOutbound()">Babcock Street (Outbound)</button>
-
-            </form>
-            
             <!-- Shows the arrival time after the user selects their stop -->
             <div ng-show="testVariable>0" class="panel-footer">
-                <h3 class="text-center">The next arrival time for {{newVariable}} is {{arrivalTime}}.</h3>
+                <h3 class="text-center">The next arrival time for {{SelectedStop}} is {{arrivalTime}}.</h3>
+            </div>
         </div>
 
-        </div>
+
+        <!-- Panel Body -->
+
     </div>
 </div>
