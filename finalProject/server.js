@@ -8,6 +8,8 @@ var morgan          = require('morgan');
 var bodyParser      = require('body-parser');
 var methodOverride  = require('method-override');
 var app             = express();
+var passport        = require('passport')
+var social          = require('./app/passport')(app, passport);
 
 // Express Configuration
 // -----------------------------------------------------
