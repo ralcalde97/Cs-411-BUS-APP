@@ -81,29 +81,35 @@ module.exports = function(app) {
 
         var stopID = req.body.stopID;
         var APIUrl = "https://www.bu.edu/bumobile/rpc/bus/livebus.json.php"
-        let stoptimes = new Set()
-
+        
         request(APIUrl, function (err, response, body) {
+            let beststoptime = 10000
+            let stopjs = ''
+            let arrtime = ''
+            let arrnum = ''
             if(err){
               res.send(err);
             } else { 
 
                 let busInfo = JSON.parse(body)
               
-              if(busInfo.data == undefined){
-                res.send("Something Errored");
-              } else {
-                for (result in (busInfo.ResultSet.Result)){
-                    for (arrivals in result.arrival_estimates){
-                        if (arrivals.stop_id == stopID){
-                            stoptimes.add(arrivals.arrival_at)
+                for (result in busInfo.ResultSet.Result){
+                    //console.log(busInfo.ResultSet.Result[result].general_heading)
+                    for (arrivals in busInfo.ResultSet.Result[result].arrival_estimates){
+                        stopjs = busInfo.ResultSet.Result[result].arrival_estimates[arrivals].stop_id
+                        arrtime = busInfo.ResultSet.Result[result].arrival_estimates[arrivals].arrival_at.substring(11,19)
+                        arrnum = parseInt(arrtime.substring(0,2))*100 + parseInt(arrtime.substring(3,5))
+                        if (stopjs == stopID){
+                            if (arrnum < beststoptime) {
+                                beststoptime = arrnum
+                            }
                         }
                     }
                 }
-
-                res.send(stoptimes);
+                arrtime = arrnum.toString()
+                arrtime = arrtime.substring(0,2) + ':' + arrtime.substring(2,4)
+                res.send(arrtime);
         
-              }
             }
           });
 

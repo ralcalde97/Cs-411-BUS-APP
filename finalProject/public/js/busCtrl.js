@@ -3,5 +3,240 @@ busCtrl.controller('busCtrl', function($scope, $log, $http) {
 
     // Initializes Variables
     // ----------------------------------------------------------------------------
+    $scope.formData = {};
+
+    $scope.testVariable = 0
+    $scope.stopName = "Please click on a stop"
+    $scope.arrivalTime = ""
+
+    // Bus Stop API calls
+
+    $scope.stop4149154 = function(testVariable){
+
+    	queryBody = {
+            stopID: "4149154"
+        };
+        
+        $http.post('/BusAPI', queryBody)
+
+            // Store the filtered results in queryResults
+            .success(function(queryResults){
+                $scope.arrivalTime = queryResults;
+            })
+            
+
+        $scope.stopName = "Stop 4149154"
+        $scope.testVariable = 5
+    
+    };
+
+    $scope.stop4160738 = function(testVariable){
+
+        queryBody = {
+            stopID: "4160738"
+        };
+        
+        $http.post('/BusAPI', queryBody)
+
+            // Store the filtered results in queryResults
+            .success(function(queryResults){
+                $scope.arrivalTime = queryResults;
+            })
+            
+
+        $scope.stopName = "Stop 4160738"
+        $scope.testVariable = 5
+    
+    };
+
+    $scope.stop4110206 = function(testVariable){
+
+        queryBody = {
+            stopID: "4110206"
+        };
+        
+        $http.post('/BusAPI', queryBody)
+
+            // Store the filtered results in queryResults
+            .success(function(queryResults){
+                $scope.arrivalTime = queryResults;
+            })
+            
+
+        $scope.stopName = "Stop 4110206"
+        $scope.testVariable = 5
+    
+    };
+
+    $scope.stop4160734 = function(testVariable){
+
+        queryBody = {
+            stopID: "4160734"
+        };
+        
+        $http.post('/BusAPI', queryBody)
+
+            // Store the filtered results in queryResults
+            .success(function(queryResults){
+                $scope.arrivalTime = queryResults;
+            })
+            
+
+        $scope.stopName = "Stop 4160734"
+        $scope.testVariable = 5
+    
+    };
+
+    $scope.stop4160726 = function(testVariable){
+
+        queryBody = {
+            stopID: "4160726"
+        };
+        
+        $http.post('/BusAPI', queryBody)
+
+            // Store the filtered results in queryResults
+            .success(function(queryResults){
+                $scope.arrivalTime = queryResults;
+            })
+            
+
+        $scope.stopName = "Stop 4160726"
+        $scope.testVariable = 5
+    
+    };
+
+    $scope.stop4160730 = function(testVariable){
+
+        queryBody = {
+            stopID: "4160730"
+        };
+        
+        $http.post('/BusAPI', queryBody)
+
+            // Store the filtered results in queryResults
+            .success(function(queryResults){
+                $scope.arrivalTime = queryResults;
+            })
+            
+
+        $scope.stopName = "Stop 4160730"
+        $scope.testVariable = 5
+    
+    };
+
+    $scope.stop4160722 = function(testVariable){
+
+        queryBody = {
+            stopID: "4160722"
+        };
+        
+        $http.post('/BusAPI', queryBody)
+
+            // Store the filtered results in queryResults
+            .success(function(queryResults){
+                $scope.arrivalTime = queryResults;
+            })
+            
+
+        $scope.stopName = "Stop 4160722"
+        $scope.testVariable = 5
+    
+    };
+
+    $scope.stop4068470 = function(testVariable){
+
+        queryBody = {
+            stopID: "4068470"
+        };
+        
+        $http.post('/BusAPI', queryBody)
+
+            // Store the filtered results in queryResults
+            .success(function(queryResults){
+                $scope.arrivalTime = queryResults;
+            })
+            
+
+        $scope.stopName = "Stop 4068470"
+        $scope.testVariable = 5
+    
+    };
+
+    $scope.stop4160714 = function(testVariable){
+
+        queryBody = {
+            stopID: "4160714"
+        };
+        
+        $http.post('/BusAPI', queryBody)
+
+            // Store the filtered results in queryResults
+            .success(function(queryResults){
+                $scope.arrivalTime = queryResults;
+            })
+            
+
+        $scope.stopName = "Stop 4160714"
+        $scope.testVariable = 5
+    
+    };
+
+    $scope.stop4068482 = function(testVariable){
+
+        queryBody = {
+            stopID: "4068482"
+        };
+        
+        $http.post('/BusAPI', queryBody)
+
+            // Store the filtered results in queryResults
+            .success(function(queryResults){
+                $scope.arrivalTime = queryResults;
+            })
+            
+
+        $scope.stopName = "Stop 4068482"
+        $scope.testVariable = 5
+    
+    };
+
+    $scope.stop4068466 = function(testVariable){
+
+        queryBody = {
+            stopID: "4068466"
+        };
+        
+        $http.post('/BusAPI', queryBody)
+
+            // Store the filtered results in queryResults
+            .success(function(queryResults){
+                $scope.arrivalTime = queryResults;
+            })
+            
+
+        $scope.stopName = "Stop 4068466"
+        $scope.testVariable = 5
+    
+    };
+
+    $scope.stop4160718 = function(testVariable){
+
+        queryBody = {
+            stopID: "4160718"
+        };
+        
+        $http.post('/BusAPI', queryBody)
+
+            // Store the filtered results in queryResults
+            .success(function(queryResults){
+                $scope.arrivalTime = queryResults;
+            })
+            
+
+        $scope.stopName = "Stop 4160718"
+        $scope.testVariable = 5
+    
+    };
 
 });

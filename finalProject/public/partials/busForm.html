@@ -1,5 +1,5 @@
 <!-- "Join Team" (Post) Form -->
-<div class="">
+<div class="col-md-5">
 
     <!-- Creates Main Panel -->
     <div class="panel panel-default">
@@ -12,11 +12,40 @@
         <!-- Panel Body -->
         <div class="panel-body">
 
-            <h3>BUS app stuff will go here eventually</h3>
+            <div class="header">
+                        <!-- Header items are made active upon selection -->
+                        <ul class="nav nav-pills nav-justified">
+                            <li ng-class="{ active: isActive('/bus')}"><a href="/#/bus">Stops</a></li>
+                        </ul>
+                        <br>
+                </div>   
+                      
+
             <!-- Creates Form (novalidate disables HTML validation, Angular will control) -->
             <form name ="busForm" novalidate>
 
+                <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
+
+                <!-- Submit button. Note that its tied to createUser() function from addCtrl. Also note ng-disabled logic which prevents early submits.  -->
+                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4149154()">4149154</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4160738()">4160738</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4110206()">4110206</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4160734()">4160734</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4160726()">4160726</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4160730()">4160730</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4160722()">4160722</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4068470()">4068470</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4160714()">4160714</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4068482()">4068482</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4068466()">4068466</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4160718()">4160718</button>
+
             </form>
+            
+            <!-- Shows the arrival time after the user selects their stop -->
+            <div ng-show="testVariable>0" class="panel-footer">
+                <h3 class="text-center">The next arrival time for {{stopName}} is {{arrivalTime}}.</h3>
+            </div>
             
 
         </div>
