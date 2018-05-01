@@ -14,29 +14,12 @@
 
             <!-- Creates Form (novalidate disables HTML validation, Angular will control) -->
             <form name ="busForm" novalidate>
-
-                <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
-
-                <!-- Submit button. Note that its tied to createUser() function from addCtrl. Also note ng-disabled logic which prevents early submits.  -->
-                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4160714()">Student Village 2</button>
-                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4114006()">Amory St.</button>
-                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4149154()">St. Mary's St.</button>
-                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4068466()">Blandford St.</button>
-                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4068470()">Hotel Commonwealth</button>
-                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4110206()">Huntington Ave. (Outbound)</button>
-                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4068482()">710 Albany St.</button>
-                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4160718()">Huntington Ave. (Inbound)</button>
-                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4160722()">Danielsen Hall</button>
-                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4160726()">Myles Standish</button>
-                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4160730()">Silber Way</button>
-                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4160734()">Marsh Plaza</button>
-                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4160738()">College of Fine Arts</button>
-
+                <select ng-options="x1.stopname for x1 in stops" ng-model="SelectedStop" ng-change="stopData(SelectedStop)"></select>
             </form>
             
             <!-- Shows the arrival time after the user selects their stop -->
             <div ng-show="testVariable>0" class="panel-footer">
-                <h3 class="text-center">The next arrival time for {{stopName}} is {{arrivalTime}}.</h3>
+                <h3 class="text-center">The next arrival time for {{SelectedStop.stopname}} is {{arrivalTime}}.</h3>
             </div>
             
 
