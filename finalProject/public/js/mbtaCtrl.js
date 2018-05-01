@@ -16,15 +16,7 @@ mbtaCtrl.controller('mbtaCtrl', function($scope, $log, $http) {
     {stopname: "Pleasant St. Outbound", stopnum: "70139"},
     {stopname: "Babcock St. Outbound", stopnum: "70137"}]
     $scope.stopData = function(val)  {
-        if ($scope.num>0) {
-            $scope.arrivalTime = ""
-            location.reload();
-        }
-        if (val.stopname == "BU East Outbound") {
-            num = 70147;
-        } else {
-            num = 70149;
-        }
+        var num = $scope.SelectedStop.stopnum;
         queryBody = {
             stopID: num
         };
