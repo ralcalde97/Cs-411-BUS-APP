@@ -10,13 +10,17 @@
         </div>
 
         <!-- Panel Body -->
-        <div class="panel-body">
+        <div class="panel-body"> 
 
-            <h3>BUS app stuff will go here eventually</h3>
             <!-- Creates Form (novalidate disables HTML validation, Angular will control) -->
             <form name ="busForm" novalidate>
-
+                <select ng-options="x1.stopname for x1 in stops" ng-model="SelectedStop" ng-change="stopData(SelectedStop)"></select>
             </form>
+            
+            <!-- Shows the arrival time after the user selects their stop -->
+            <div ng-show="testVariable>0" class="panel-footer">
+                <h3 class="text-center">The next arrival time for {{SelectedStop.stopname}} is {{arrivalTime}}.</h3>
+            </div>
             
 
         </div>
