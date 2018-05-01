@@ -11,10 +11,9 @@
 
         <!-- drop down menu -->
         <div class= "panel-body">
-            <input list="testList" id=stops type="text" ng-model="SelectedStop" ng-change="stopData(SelectedStop)"/>
-            <datalist id="testList">
-                <option ng-repeat="x1 in stops" value="{{x1.stopname}}"></option>
-            </datalist>
+            <form name= "mbtaForm" novalidate>
+                <select ng-options="x1.stopname for x1 in stops" ng-model="SelectedStop" ng-change="stopData(SelectedStop)"></select>
+            </form>
 
             <!-- Shows the arrival time after the user selects their stop -->
             <div ng-show="testVariable>0" class="panel-footer">
