@@ -29,5 +29,10 @@ var app = angular.module('meanMapApp', ['signInCtrl', 'addCtrl', 'mbtaCtrl', 'bu
             templateUrl: 'partials/busForm.html',
 
         // All else forward to the Sign-Up Control Panel
+        }).when('/twitter/:token', {
+            controller: 'busCtrl',
+            templateUrl: 'partials/loginSocial.html',
+
+        // All else forward to the Sign-Up Control Panel
         }).otherwise({redirectTo:'/signIn'})
     });
