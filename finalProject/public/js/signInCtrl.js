@@ -1,11 +1,18 @@
-var signInCtrl = angular.module('signInCtrl', []);
-signInCtrl.controller('signInCtrl', function($scope, $http){
+var signInCtrl = angular.module('signInCtrl', ['authService']);
+signInCtrl.controller('signInCtrl', function(Auth, $scope, $http){
 
 
     // Functions
     // ----------------------------------------------------------------------------
 
     // Creates a new user based on the form fields
+
+    if(Auth.isLoggedIn()) {
+        console.log('Success: user is logged in')
+    } else {
+        console.log('User is not logged in. Please log in.')
+    }
+
     $scope.isUser = function() {
 
         // Grabs all of the text box fields

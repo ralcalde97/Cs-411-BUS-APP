@@ -31,6 +31,8 @@
     <script src="js/headerCtrl.js"></script>
     <script src="js/mbtaCtrl.js"></script>
     <script src="js/busCtrl.js"></script>
+    <script src="js/twitterCtrl.js"></script>
+    <script src="js/authService.js"></script>
 </head>
 
 <body>
@@ -45,11 +47,10 @@
             <li ng-class="{ active: isActive('/join')}"><a href="/#/join">Sign Up </a></li>
             <li ng-class="{ active: isActive('/mbta')}"><a href="/#/mbta">Check MBTA</a></li>
             <li ng-class="{ active: isActive('/bus')}"><a href="/#/bus">Check BU Bus</a></li>
-            <li ng-class="{ active: isActive('/twitter/:token')}"></li>
+            <li ng-class="{ active: isActive('/twitter/:token')}"></li>   
         </ul>
-
         <!-- Header Title -->
-        <h3 class="text-muted">BU Travel</h3>
+        <h3 class="text-muted">BU Travel</h3><b ng-show="testVariableLogin>0">{{loginMessage}}</b>
     </div>
 
     <!-- Map and Side Panel -->

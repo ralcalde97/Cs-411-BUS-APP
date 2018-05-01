@@ -1,6 +1,8 @@
 var mbtaCtrl = angular.module('mbtaCtrl', []);
 mbtaCtrl.controller('mbtaCtrl', function($scope, $log, $http) {
 
+    
+
     // Initializes Variables
     // ----------------------------------------------------------------------------
     $scope.formData = {};

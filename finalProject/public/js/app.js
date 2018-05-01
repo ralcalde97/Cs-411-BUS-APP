@@ -1,5 +1,5 @@
 // Declares the initial angular module "meanMapApp". Module grabs other controllers and services.
-var app = angular.module('meanMapApp', ['signInCtrl', 'addCtrl', 'mbtaCtrl', 'busCtrl', 'headerCtrl', 'geolocation', 'gservice', 'ngRoute'])
+var app = angular.module('meanMapApp', ['twitterCtrl','signInCtrl', 'addCtrl', 'mbtaCtrl', 'busCtrl', 'headerCtrl', 'geolocation', 'gservice', 'ngRoute'])
 
     // Configures Angular routing -- showing the relevant view and controller when needed.
     .config(function($routeProvider){
@@ -30,7 +30,7 @@ var app = angular.module('meanMapApp', ['signInCtrl', 'addCtrl', 'mbtaCtrl', 'bu
 
         // All else forward to the Sign-Up Control Panel
         }).when('/twitter/:token', {
-            controller: 'busCtrl',
+            controller: 'twitterCtrl',
             templateUrl: 'partials/loginSocial.html',
 
         // All else forward to the Sign-Up Control Panel
