@@ -22,8 +22,6 @@ signInCtrl.controller('signInCtrl', function($scope, $http){
                 $scope.formData.username = "";
                 $scope.formData.password = "";
 
-                // Refresh the map with new data
-                gservice.refresh($scope.formData.latitude, $scope.formData.longitude);
             })
             .error(function (data) {
                 console.log('Error: ' + data);

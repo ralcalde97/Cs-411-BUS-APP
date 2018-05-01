@@ -1,5 +1,5 @@
 <!-- "Join Team" (Post) Form -->
-<div class="col-md-5">
+<div class="">
 
     <!-- Creates Main Panel -->
     <div class="panel panel-default">
@@ -10,16 +10,7 @@
         </div>
 
         <!-- Panel Body -->
-        <div class="panel-body">
-
-            <div class="header">
-                        <!-- Header items are made active upon selection -->
-                        <ul class="nav nav-pills nav-justified">
-                            <li ng-class="{ active: isActive('/bus')}"><a href="/#/bus">Stops</a></li>
-                        </ul>
-                        <br>
-                </div>   
-                      
+        <div class="panel-body"> 
 
             <!-- Creates Form (novalidate disables HTML validation, Angular will control) -->
             <form name ="busForm" novalidate>
@@ -27,18 +18,19 @@
                 <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
 
                 <!-- Submit button. Note that its tied to createUser() function from addCtrl. Also note ng-disabled logic which prevents early submits.  -->
-                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4149154()">4149154</button>
-                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4160738()">4160738</button>
-                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4110206()">4110206</button>
-                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4160734()">4160734</button>
-                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4160726()">4160726</button>
-                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4160730()">4160730</button>
-                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4160722()">4160722</button>
-                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4068470()">4068470</button>
-                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4160714()">4160714</button>
-                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4068482()">4068482</button>
-                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4068466()">4068466</button>
-                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4160718()">4160718</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4160714()">Student Village 2</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4114006()">Amory St.</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4149154()">St. Mary's St.</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4068466()">Blandford St.</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4068470()">Hotel Commonwealth</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4110206()">Huntington Ave. (Outbound)</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4068482()">710 Albany St.</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4160718()">Huntington Ave. (Inbound)</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4160722()">Danielsen Hall</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4160726()">Myles Standish</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4160730()">Silber Way</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4160734()">Marsh Plaza</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="stop4160738()">College of Fine Arts</button>
 
             </form>
             
