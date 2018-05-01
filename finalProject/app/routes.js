@@ -102,13 +102,18 @@ module.exports = function(app) {
                         if (stopjs == stopID){
                             if (arrnum < beststoptime) {
                                 beststoptime = arrnum
+                                //console.log(stopID + ' + ' + beststoptime)
                             }
                         }
                     }
                 }
-                arrtime = arrnum.toString()
-                arrtime = arrtime.substring(0,2) + ':' + arrtime.substring(2,4)
-                res.send(arrtime);
+                if (beststoptime == 10000) {
+                    res.send("not available")
+                } else {
+                    arrtime = beststoptime.toString()
+                    arrtime = arrtime.substring(0,2) + ':' + arrtime.substring(2,4)
+                    res.send(arrtime);
+                }
         
             }
           });
