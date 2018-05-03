@@ -1,10 +1,10 @@
-<!-- "Join Team" (Post) Form -->
+<!-- was used when we had a panel for map display, and a panel for information -->
 <div class="">
 
-    <!-- Creates Main Panel -->
+    <!-- creates panel w MBTA info -->
     <div class="panel panel-default">
 
-        <!-- Panel Title -->
+        <!-- title, MBTA stop info page-->
         <div class="panel-heading">
             <h2 class="panel-title text-center">MBTA Times Near You <span class="glyphicon glyphicon-map-marker"></span></h2>
         </div>
@@ -15,14 +15,10 @@
                 <select ng-options="x1.stopname for x1 in stops" ng-model="SelectedStop" ng-change="stopData(SelectedStop)"></select>
             </form>
 
-            <!-- Shows the arrival time after the user selects their stop -->
+            <!-- shows the arrival time after the user selects their stop, triggered in js control page -->
             <div ng-show="testVariable>0" class="panel-footer">
                 <h3 class="text-center">The next arrival time for {{SelectedStop.stopname}} is {{arrivalTime}}.</h3>
             </div>
         </div>
-
-
-        <!-- Panel Body -->
-
     </div>
 </div>
