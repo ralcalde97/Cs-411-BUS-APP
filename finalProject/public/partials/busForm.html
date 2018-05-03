@@ -1,23 +1,22 @@
-<!-- "Join Team" (Post) Form -->
+<!-- was used when we had a panel with a map and a panel with bus/mbta info -->
 <div class="">
 
-    <!-- Creates Main Panel -->
+    <!-- main panel, currently takes up entire page -->
     <div class="panel panel-default">
 
-        <!-- Panel Title -->
+        <!-- title, this is the BU BUS page -->
         <div class="panel-heading">
             <h2 class="panel-title text-center">BU BUS<span class="glyphicon glyphicon-map-marker"></span></h2>
         </div>
 
-        <!-- Panel Body -->
         <div class="panel-body"> 
 
-            <!-- Creates Form (novalidate disables HTML validation, Angular will control) -->
+            <!-- creates a form (angular controls, not html because of novalidate -->
             <form name ="busForm" novalidate>
                 <select ng-options="x1.stopname for x1 in stops" ng-model="SelectedStop" ng-change="stopData(SelectedStop)"></select>
             </form>
             
-            <!-- Shows the arrival time after the user selects their stop -->
+            <!-- shows the arrival time after the user selects their stop, triggered in bus control js file -->
             <div ng-show="testVariable>0" class="panel-footer">
                 <h3 class="text-center">The next arrival time for {{SelectedStop.stopname}} is {{arrivalTime}}.</h3>
             </div>
