@@ -87,18 +87,19 @@ module.exports = function(app) {
             let stopjs = ''
             let arrtime = ''
             let arrnum = ''
+            // If an error, send it
             if(err){
               res.send(err);
             } else { 
-
-                let busInfo = JSON.parse(body)
-              
+            	// read json data
+                let busInfo = JSON.parse(body) 
                 for (result in busInfo.ResultSet.Result){
-                    //console.log(busInfo.ResultSet.Result[result].general_heading)
                     for (arrivals in busInfo.ResultSet.Result[result].arrival_estimates){
+                    	// reading all arrival times of each stop
                         stopjs = busInfo.ResultSet.Result[result].arrival_estimates[arrivals].stop_id
                         arrtime = busInfo.ResultSet.Result[result].arrival_estimates[arrivals].arrival_at.substring(11,19)
                         arrnum = parseInt(arrtime.substring(0,2))*100 + parseInt(arrtime.substring(3,5))
+                        // set soonest arrival time
                         if (stopjs == stopID){
                             if (arrnum < beststoptime) {
                                 beststoptime = arrnum
@@ -110,6 +111,7 @@ module.exports = function(app) {
                 if (beststoptime == 10000) {
                     res.send("not available")
                 } else {
+                	// send the soonest arrival time
                     arrtime = beststoptime.toString()
                     arrtime = arrtime.substring(0,2) + ':' + arrtime.substring(2,4)
                     res.send(arrtime);
