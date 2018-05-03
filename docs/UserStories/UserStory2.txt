@@ -4,7 +4,7 @@ As a BU student I want to view transit times from all modes of transportation
 to determine the quickest way to get home.
 
 When a user is logged into the application (see user story 1) they should be 
-able to see a quick view of MBTA times, BU Bus times, and Uber times as well. 
+able to see a quick view of MBTA times and BU Bus times.
 In this way, they will have a quick snapshot of what their current fastest 
 option home is. If everything goes right, the user will be able to click on 
 which option they would like to use to get home and receive a more detailed 
