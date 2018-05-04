@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- Declares meanMapApp as the starting Angular module -->
+
 <html class="no-js" ng-app="BUTravel">
 <head>
     <meta charset="utf-8">
@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="style.css"/>
 
-    <!-- Modernizr -->
     <script src="../bower_components/modernizr/bin/modernizr"></script>
 
     <!-- JS Source -->
@@ -20,7 +19,7 @@
     <script src="../bower_components/angular-route/angular-route.js"></script>
     <script src="../bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
 
-    <!-- Angular Controller Files -->
+    <!-- Controller Files -->
     <script src="js/app.js"></script>
     <script src="js/signInCtrl.js"></script>
     <script src="js/gservice.js"></script>
@@ -35,10 +34,10 @@
 <body>
 
 <div class="container">
-    <!-- Header Menu. Note use of headerCtrl -->
+    <!-- Header Menu  -->
     <div class="header" ng-controller="headerCtrl">
 
-        <!-- Header items are made active upon selection -->
+       
         <ul class="nav nav-pills pull-right">
             <li ng-class="{ active: isActive('/signIn')}"><a href="/#/signIn">Sign In</a></li>
             <li ng-class="{ active: isActive('/join')}"><a href="/#/join">Sign Up </a></li>
