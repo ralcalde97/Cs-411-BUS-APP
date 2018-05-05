@@ -7,11 +7,9 @@ var MBTAkey         = jsconfig.MBTAkey;
 
 
 
-// Opens App Routes
 module.exports = function(app) {
 
     // GET Routes
-    // --------------------------------------------------------
     // Retrieve records for all users in the db
     app.get('/users', function(req, res){
 
@@ -28,7 +26,6 @@ module.exports = function(app) {
     });
 
     // POST Routes
-    // --------------------------------------------------------
     // Provides method for saving new users in the db
     app.post('/users', function(req, res){
 
@@ -121,22 +118,5 @@ module.exports = function(app) {
           });
 
         
-    });
-
-
-
-    // DELETE Routes (Dev Only)
-    // --------------------------------------------------------
-    // Delete a User off the Map based on objID
-    app.delete('/users/:objID', function(req, res){
-        var objID = req.params.objID;
-        var update = req.body;
-
-        User.findByIdAndRemove(objID, update, function(err, user){
-            if(err)
-                res.send(err);
-            else
-                res.json(req.body);
-        });
     });
 };

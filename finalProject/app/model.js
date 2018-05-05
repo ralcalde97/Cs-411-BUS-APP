@@ -1,4 +1,4 @@
-// Pulls Mongoose dependency for creating schemas
+// Brings mongoose into the project
 var mongoose    = require('mongoose');
 var Schema      = mongoose.Schema;
 
@@ -24,8 +24,5 @@ UserSchema.pre('save', function(next){
     next();
 });
 
-// Indexes this schema in geoJSON format (critical for running proximity searches)
-UserSchema.index({location: '2dsphere'});
-
-// Exports the UserSchema for use elsewhere. Sets the MongoDB collection to be used as: "scotch-user"
+// Creates new module in mLab
 module.exports = mongoose.model('student-user', UserSchema);

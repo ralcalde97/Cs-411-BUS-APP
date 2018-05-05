@@ -7,6 +7,8 @@ var secret          = 'harrypotter';
 var consumerTwitter = jsonconfig.twitterConsumer
 var secretTwitter   = jsonconfig.twitterSecret
 
+// This pages sets up passport to handle 3rd party Auth with twitter
+
 module.exports = function(app, passport) {
 
     app.use(passport.initialize());
@@ -65,6 +67,8 @@ module.exports = function(app, passport) {
         done(null, profile);
       }
     ));
+
+    // Twitter auth routes
 
     app.get('/auth/twitter', passport.authenticate('twitter'));
 
