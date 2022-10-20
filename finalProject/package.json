@@ -10,7 +10,7 @@
         "express-session": "^1.15.6",
         "jsonwebtoken": "^5.0.2",
         "method-override": "~2.1.2",
-        "mongoose": "~4.1.0",
+        "mongoose": "~4.13.21",
         "morgan": "~1.2.2",
         "passport": "^0.4.0",
         "passport-facebook": "^2.1.1",
