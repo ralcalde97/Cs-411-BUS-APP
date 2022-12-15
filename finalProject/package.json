@@ -6,7 +6,7 @@
     "author": "CS411",
     "dependencies": {
         "body-parser": "~1.5.2",
-        "express": "~4.7.2",
+        "express": "~4.17.3",
         "express-session": "^1.15.6",
         "jsonwebtoken": "^5.0.2",
         "method-override": "~2.1.2",
